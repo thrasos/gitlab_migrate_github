@@ -3,8 +3,7 @@ Automate the cloning of your GitLab repositories and optionally push them to Git
 
 
 # GitLab to GitHub Repository Migration Script
-So you have gazillions of repositories on Gitlab, and for some reason, you need to download them all and perhaps push them to GitHub (I don't know why, but people do crazy things); you are at the right place.
-
+So you have gazillions of repositories on Gitlab( and you don't want to use the glab func below), and for some reason, you need to download them all and perhaps push them to GitHub (I don't know why, but people do crazy things); you are at the right place.
 This repository contains two Bash scripts that automate the process of cloning your repositories from GitLab and then pushing them to GitHub.
 
 ## Prerequisites
@@ -63,3 +62,10 @@ This script clones all repositories from your GitLab account (even if they are m
 - Creates corresponding private repositories on GitHub.
 - Pushes the code from your GitLab repositories to your GitHub repositories.
 
+##glab
+upload your public certificate to your gitlab profile then run
+```
+eval "$(ssh-agent -s)"  (run the agent)
+ssh-add ~/.ssh/id_rsa  (or wherever the ssh is located)
+glab repo clone -g project_id -p --paginate  
+```
